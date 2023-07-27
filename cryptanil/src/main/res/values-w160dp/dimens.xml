@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="log_text_margin_top">5dp</dimen>
+
+
+    <!-- text size -->
+    <dimen name="ultra_small_textsize">4dp</dimen>
+    <dimen name="extra_small_textsize">6dp</dimen>
+    <dimen name="very_small_text_size">8dp</dimen>
+    <dimen name="small_text_size">10dp</dimen>
+    <dimen name="middle_text_size">12dp</dimen>
+    <dimen name="medium_text_size">13dp</dimen>
+    <dimen name="big_text_size">14dp</dimen>
+    <dimen name="extra_big_text_size">16dp</dimen>
+    <dimen name="ultra_big_text_size">18dp</dimen>
+    <dimen name="balance_text_size">22dp</dimen>
+    <dimen name="chooserText_size">14.67dp</dimen>
+    <dimen name="balance_size_balance">15dp</dimen>
+    <dimen name="balance_size_amount">22dp</dimen>
+</resources>

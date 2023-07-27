@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@color/layoutColor"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
+
+
+        <RelativeLayout
+            android:id="@+id/alertHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="22dp">
+
+            <ImageView
+                android:id="@+id/dialogIV"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/dialogMessageTV"
+                style="@style/AppTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dialogIV"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:paddingLeft="23dp"
+                android:paddingRight="23dp"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/middle_text_size"
+                android:visibility="gone" />
+
+
+            <Button
+                android:id="@+id/dialogBT"
+                style="@style/AppButtonStyle"
+                android:layout_width="172dp"
+                android:layout_below="@+id/dialogMessageTV"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="11dp"
+                android:text="@string/dialog_ok" />
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

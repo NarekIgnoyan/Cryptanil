@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0E8EFE</color>
+
+    <color name="black">#FDFDFE</color>
+    <color name="white">#FF000000</color>
+    <color name="gray">#EBEBED</color>
+    <color name="darkGray">#8F8F8F</color>
+    <color name="inputBackgroundColor">#262B30</color>
+    <color name="textColor">#FDFDFE</color>
+    <color name="borderColor">#555555</color>
+    <color name="colorYellow">#FFC70E</color>
+    <color name="textButtonColor">#0E8EFE</color>
+    <color name="buttonTextColor">#FFFFFF</color>
+    <color name="textButtonColorPressed">#7BC2FF</color>
+    <color name="qrColor">#0E8EFE</color>
+    <color name="buttonColor">#0E8EFE</color>
+    <color name="loadingBackgroundColor">#7C4C4C4C</color>
+    <color name="icIconsColor">#FEFEFD</color>
+    <color name="colorRed">#FF2626</color>
+    <color name="layoutColor">#1D2223</color>
+    <color name="errorColor">#e37971</color>
+
+</resources>

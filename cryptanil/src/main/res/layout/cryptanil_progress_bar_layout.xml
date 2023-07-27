@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.48" />
+
+        <ProgressBar
+            android:id="@+id/waitingPB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/confirmingLineView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1.3"
+            android:background="@color/darkGray" />
+
+        <View
+            android:id="@+id/confirmingEmptyProgress"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/progress" />
+
+        <ProgressBar
+            android:id="@+id/confirmingPB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/confirmedLineView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1.3"
+            android:background="@color/darkGray" />
+
+        <View
+            android:id="@+id/confirmedEmptyProgress"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/progress" />
+
+        <ProgressBar
+            android:id="@+id/confirmedPB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.48" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/waitingTV"
+            style="@style/AppTextStyleBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="@string/waiting_for_payment"
+            android:textColor="@color/textButtonColor" />
+
+
+        <TextView
+            android:id="@+id/confirmingTV"
+            style="@style/AppTextStyleBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="@string/confirming_on_blockchain"
+            android:textColor="@color/darkGray" />
+
+        <TextView
+            android:id="@+id/confirmedTV"
+            style="@style/AppTextStyleBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="@string/confirmed_on_blockchain"
+            android:textColor="@color/darkGray" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

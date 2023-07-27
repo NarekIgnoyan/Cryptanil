@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layoutColor">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.primesoft.cryptanil.app_views.AppToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:actionText="@string/cancel"
+            app:icon="@drawable/ic_logo"
+            app:title="@string/cryptanil" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/companyHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp">
+
+            <RelativeLayout
+                android:id="@+id/companyLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/companyIV"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_logo" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/companyInfoLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/companyIV"
+                    android:gravity="center|start"
+                    android:orientation="vertical"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="15dp">
+
+                    <TextView
+                        android:id="@+id/companyNameTV"
+                        style="@style/AppTextStyleBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/buttonTextColor"
+                        android:textSize="@dimen/big_text_size" />
+
+                    <TextView
+                        android:id="@+id/amountTV"
+                        style="@style/AppTextStyleBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/buttonTextColor"
+                        android:textSize="@dimen/big_text_size" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <ImageView
+                    android:id="@+id/qrIV"
+                    android:layout_width="135dp"
+                    android:layout_height="135dp"
+                    android:layout_alignParentEnd="true"
+                    android:padding="10dp" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/informationHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/companyHolder"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/binanceWarningTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:gravity="center"
+                android:paddingBottom="21dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_warning" />
+
+                <TextView
+                    style="@style/AppTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="-1dp"
+                    android:paddingStart="7dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/binance_pay_warning"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="@dimen/small_text_size" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal">
+
+                <com.primesoft.cryptanil.app_views.AppSpinner
+                    android:id="@+id/cryptoTypeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    app:hint="@string/crypto_type" />
+
+                <com.primesoft.cryptanil.app_views.AppSpinner
+                    android:id="@+id/networkSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_weight="1"
+                    app:hint="@string/network" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <RelativeLayout
+                android:id="@+id/addressHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:visibility="gone">
+
+                <com.primesoft.cryptanil.app_views.AppEditText
+                    android:id="@+id/addressET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:disable="true"
+                    app:hint="@string/address"
+                    app:showCopy="true" />
+
+                <TextView
+                    android:id="@+id/requiredTitleTV"
+                    style="@style/AppTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/addressET"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/required_amount_title"
+                    android:textColor="@color/buttonColor"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/requiredAmountTV"
+                    style="@style/AppTextStyleBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/requiredTitleTV"
+                    android:layout_centerHorizontal="true"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/buttonColor"
+                    android:visibility="gone"
+                    app:drawableEndCompat="@drawable/ic_copy" />
+            </RelativeLayout>
+
+            <com.primesoft.cryptanil.app_views.CryptanilProgress
+                android:id="@+id/tronProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/binanceHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <com.primesoft.cryptanil.app_views.AppEditText
+                    android:id="@+id/memoET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:disable="true"
+                    app:hint="@string/memo"
+                    app:showCopy="true" />
+
+                <com.primesoft.cryptanil.app_views.AppEditText
+                    android:id="@+id/txIdEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hint="@string/tx_id"
+                    app:imeOption="done" />
+
+                <Button
+                    android:id="@+id/submitBT"
+                    style="@style/AppButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:enabled="false"
+                    android:text="@string/submit" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <Button
+                android:id="@+id/simulateBT"
+                style="@style/AppButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="@string/simulate"
+                android:visibility="gone" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/transactionsTV"
+            style="@style/AppTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/informationHolder"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="15dp"
+            android:text="@string/transactions"
+            android:textColor="@color/buttonColor"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/transactionsHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/transactionsTV"
+            android:layout_marginTop="5dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical" />
+
+
+    </RelativeLayout>
+
+</ScrollView>

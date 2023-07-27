@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@color/layoutColor"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/titleTV"
+                style="@style/AppTextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/closeBT"
+                android:layout_alignBottom="@+id/closeBT"
+                android:gravity="center"
+                android:text="@string/request_refund"
+                android:textSize="@dimen/big_text_size" />
+
+            <ImageView
+                android:id="@+id/closeBT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_close" />
+
+            <com.primesoft.cryptanil.app_views.AppEditText
+                android:id="@+id/fullNameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titleTV"
+                android:layout_marginTop="30dp"
+                app:hint="@string/full_name"
+                app:imeOption="next" />
+
+            <com.primesoft.cryptanil.app_views.AppEditText
+                android:id="@+id/mailET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fullNameET"
+                app:hint="@string/e_mail_address"
+                app:imeOption="next" />
+
+            <com.primesoft.cryptanil.app_views.AppEditText
+                android:id="@+id/reasonET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mailET"
+                app:hint="@string/reason"
+                app:imeOption="next" />
+
+            <com.primesoft.cryptanil.app_views.AppEditText
+                android:id="@+id/descriptionET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reasonET"
+                app:hint="@string/description"
+                app:imeOption="done" />
+
+            <Button
+                android:id="@+id/submitBT"
+                style="@style/AppButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/descriptionET"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="10dp"
+                android:text="@string/submit" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

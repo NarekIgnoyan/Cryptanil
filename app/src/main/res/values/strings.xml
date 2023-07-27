@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CryptanilExample</string>
+    <string name="transaction_order_id">Transaction order ID</string>
+    <string name="cryptanil_transaction">Cryptanil transaction</string>
+</resources>

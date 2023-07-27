@@ -1,0 +1,85 @@
+<resources>
+    <string name="cryptanil">Cryptanil</string>
+
+    //TRANSLATE//
+    <string name="timeout_error">The request was timeout. Please check your Internet connection.</string>
+    //TRANSLATE//
+    <string name="something_went_wrong">An error occurred. Please try again.</string>
+    //TRANSLATE//
+    <string name="no_internet_connection">Network Connection Error</string>
+
+    <string name="cancel">Annuler</string>
+    <string name="copy_text">Kopieren %s</string>
+    //TRANSLATE//
+    <string name="copied">Copied !</string>
+    <string name="submit">Einreichen</string>
+    <string name="tx_id">TxID</string>
+    <string name="memo">Memo</string>
+    <string name="address">Adresse</string>
+    <string name="crypto_type">Crypto Typ</string>
+    <string name="network">Netzwerk</string>
+    <string name="binance_pay_warning">Bitte zahlen Sie nicht mit Binance Pay. Da wir diese Transaktion nicht in unserem System sehen können, kann es sein, dass Ihre Transaktion nicht vollständig ist.</string>
+    <string name="search_crypto_type">Crypto Typ suchen</string>
+    <string name="transaction_status">Status der Transaktion</string>
+    <string name="done">Fait</string>
+    <string name="payment_submitted">Paiement soumis</string>
+
+    <string name="coin_amount">Münzbetrag</string>
+    <string name="converted_amount">Umgerechneter Betrag</string>
+    <string name="converted_currency">Umgerechnete Währung</string>
+    <string name="merchant_commission">Händler %</string>
+    <string name="merchant_commission_currency">Händler % Währung</string>
+    <string name="amount">Betrag</string>
+    <string name="amount_currency">Betrag Währung</string>
+    //TRANSLATE//
+    <string name="tx_id_or_hash">TxID or Transaction hash</string>
+    <string name="company_name">Firmenname</string>
+
+    <string name="go_to_merchant">Zur Händlerseite gehen</string>
+
+    //TRANSLATE//
+    <string name="status_created_message">Your order successfully created</string>
+    <string name="status_submitted_message">Votre commande a été soumise avec succès, nous attendons la fin de la transaction (cela prend généralement 5 à 10 minutes).</string>
+    <string name="status_expired_message">Le délai pour soumettre la transaction a expiré.Vous ne pouvez plus payer avec cette commande, veuillez retourner sur votre page marchand et créer une nouvelle transaction.</string>
+    <string name="status_completed_message">Votre commande s\'est déroulée avec succès.</string>
+    <string name="status_empty_message"></string>
+
+
+    //TRANSLATE//
+    <string name="status_created_title">Payment created</string>
+    <string name="status_submitted_title">Paiement soumis</string>
+    <string name="status_expired_title">Paiement expiré</string>
+    <string name="status_completed_title">Paiement effectué</string>
+    <string name="status_empty_title"></string>
+
+    //TRANSLATE//
+    <string name="please_wait">Please wait…</string>
+    //TRANSLATE//
+    <string name="dialog_ok">OK</string>
+    <string name="waiting_for_payment">Waiting\nfor payment</string>
+    <string name="confirming_on_blockchain">Confirming\non blockchain</string>
+    <string name="confirmed_on_blockchain">Confirmed\non blockchain</string>
+    <string name="crypto_types">Crypto types</string>
+    <string name="simulate">Simulate Payment</string>
+    <string name="required_amount_title">To complete your payment, please send</string>
+    <string name="coin">Coin</string>
+    <string name="required_amount">Required amount</string>
+    <string name="total_paid">Total paid</string>
+    <string name="status_partly_expired">Partly completed expired</string>
+    <string name="transactions">Transactions</string>
+    <string name="request_refund">Request Refund</string>
+    <string name="status_refund_requested_message">Your refund request is in process. It can take up to 5 business days. If you have any questions contact with us via chat.</string>
+    <string name="full_name">Full name</string>
+    <string name="e_mail_address">E-mail address</string>
+    <string name="reason">Reason</string>
+    <string name="description">Description</string>
+    <string name="status_refund_rejected_title">Your refund request has been rejected</string>
+    <string name="refund">Refund</string>
+    <string name="required_field">Required field</string>
+    <string name="mail_error">Invalid E-mail address</string>
+    <string name="status_refund_approved_title">Refunded</string>
+    <string name="status_refunded_message">Your refund request has been approved</string>
+    <string name="fee">Fee</string>
+    <string name="refunded">Refunded</string>
+
+</resources>

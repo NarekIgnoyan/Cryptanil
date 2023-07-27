@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="hint" format="string" localization="suggested" />
+    <attr name="text" format="string" localization="suggested" />
+    <attr name="actionText" format="string" localization="suggested" />
+    <attr name="showArrow" format="boolean" localization="suggested" />
+    <attr name="showCopy" format="boolean" localization="suggested" />
+    <attr name="disable" format="boolean" localization="suggested" />
+    <attr name="inputType" format="enum">
+        <enum name="number" value="2" />
+        <enum name="phone" value="3" />
+        <enum name="text" value="1" />
+        <enum name="password" value="81" />
+        <enum name="mail" value="21" />
+        <enum name="email" value="32" />
+        <enum name="capsWords" value="2001" />
+        <enum name="textMultiLine" value="2001" />
+        <enum name="textLongMessage" value="51" />
+    </attr>
+    <attr name="imeOption" format="enum">
+        <enum name="next" value="5" />
+        <enum name="done" value="6" />
+    </attr>
+
+    <declare-styleable name="AppEditText">
+        <attr name="hint" />
+        <attr name="text" />
+        <attr name="imeOption" />
+        <attr name="showCopy" />
+        <attr name="disable" />
+    </declare-styleable>
+
+
+    <declare-styleable name="AppSearchView">
+        <attr name="hint" />
+        <attr name="animateCancelButton" format="boolean" localization="suggested" />
+        <attr name="showCancelButton" format="boolean" localization="suggested" />
+    </declare-styleable>
+
+    <declare-styleable name="AppSpinner">
+        <attr name="hint" />
+        <attr name="text" />
+    </declare-styleable>
+
+    <declare-styleable name="AppToolbar">
+        <attr name="title" />
+        <attr name="icon" />
+        <attr name="actionText" />
+    </declare-styleable>
+
+</resources>

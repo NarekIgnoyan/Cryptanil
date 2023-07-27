@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/coinIV"
+                android:layout_width="21dp"
+                android:layout_height="21dp" />
+
+            <TextView
+                android:id="@+id/coinTitleTV"
+                style="@style/AppTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/coinIV"
+                android:layout_alignBottom="@+id/coinIV"
+                android:layout_toEndOf="@+id/coinIV"
+                android:gravity="center"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/coin"
+                android:textColor="@color/darkGray" />
+
+            <TextView
+                android:id="@+id/coinTV"
+                style="@style/AppTextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/coinTitleTV"
+                android:paddingStart="2dp"
+                android:paddingTop="2dp"
+                android:text="800TRX" />
+
+
+            <ImageView
+                android:id="@+id/networkIV"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="140dp" />
+
+
+            <TextView
+                android:id="@+id/networkTitleTV"
+                style="@style/AppTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/networkIV"
+                android:layout_alignBottom="@+id/networkIV"
+                android:layout_toEndOf="@id/networkIV"
+                android:gravity="center"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/network"
+                android:textColor="@color/darkGray" />
+
+            <TextView
+                android:id="@+id/networkTV"
+                style="@style/AppTextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/coinTitleTV"
+                android:layout_alignStart="@+id/networkIV"
+                android:paddingStart="2dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="5dp"
+                android:text="TRX" />
+
+
+            <TextView
+                android:id="@+id/hashTitleTV"
+                style="@style/AppTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/hashIV"
+                android:layout_alignBottom="@+id/hashIV"
+                android:gravity="center"
+                android:paddingEnd="5dp"
+                android:text="@string/tx_id_or_hash"
+                android:textColor="@color/darkGray" />
+
+            <ImageView
+                android:id="@+id/hashIV"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_below="@+id/coinTV"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@+id/hashTitleTV" />
+
+            <TextView
+                android:id="@+id/hashTV"
+                style="@style/AppTextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hashTitleTV"
+                android:text="asjdnasijdb123ijn23ij1n23aijsbdjb1i2j3n1j2n3" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

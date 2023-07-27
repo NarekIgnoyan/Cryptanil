@@ -1,0 +1,62 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Cryptanil" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorSecondaryVariant">@color/colorPrimary</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="AppTextStyle">
+        <item name="android:fontFamily">@font/rubik_regular</item>
+        <item name="android:textColor">@drawable/text_color_selector</item>
+        <item name="android:textSize">@dimen/middle_text_size</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <style name="AppTextStyleBold" parent="AppTextStyle">
+        <item name="android:fontFamily">@font/rubik_bold</item>
+    </style>
+
+    <style name="AppEditTextStyle" parent="AppTextStyle">
+        <item name="android:background">@drawable/app_edit_text_background</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+
+    <style name="AppTextButtonStyle" parent="AppTextStyle">
+        <item name="android:textColor">@drawable/text_button_selector</item>
+    </style>
+
+    <style name="AppButtonStyle">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/buttonTextColor</item>
+        <item name="android:textSize">@dimen/middle_text_size</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
+        <item name="android:background">@drawable/button_ripple_selector_rounded</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginBottom">15dp</item>
+    </style>
+
+    <style name="AppEditTextErrorStyle">
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
+        <item name="android:textColor">@color/colorRed</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:layout_marginTop">2.5dp</item>
+        <item name="android:paddingStart">20dp</item>
+    </style>
+
+    <style name="scaleDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/scale_in</item>
+
+        <item name="android:windowExitAnimation">@anim/scale_out</item>
+    </style>
+
+</resources>
