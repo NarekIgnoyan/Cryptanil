@@ -9,7 +9,7 @@ import com.primesoft.cryptanil.models.RefundRequest
 import com.primesoft.cryptanil.models.Response
 import com.primesoft.cryptanil.views.StatusView
 
-class StatusPresenter : AppPresenter<StatusView>() {
+class StatusPresenter(view: StatusView) : AppPresenter<StatusView>(view) {
 
     override fun onCreate() {
         super.onCreate()

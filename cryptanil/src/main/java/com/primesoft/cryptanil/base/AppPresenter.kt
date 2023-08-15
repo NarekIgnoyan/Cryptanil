@@ -2,7 +2,6 @@ package com.primesoft.cryptanil.base
 
 import android.os.Handler
 import androidx.annotation.CallSuper
-import com.hannesdorfmann.mosby3.mvp.MvpBasePresenter
 import com.primesoft.cryptanil.api.ApiImplementation
 import com.primesoft.cryptanil.api.ErrorKey
 import com.primesoft.cryptanil.api.RequestType
@@ -24,7 +23,7 @@ import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.util.concurrent.atomic.AtomicInteger
 
-abstract class AppPresenter<V : AppView> : MvpBasePresenter<V>() {
+abstract class AppPresenter<V : AppView>(var view: V? = null) {
 
     private var activeRequests: AtomicInteger? = null
     private var disposables: ArrayList<Disposable>? = null
@@ -177,6 +176,7 @@ abstract class AppPresenter<V : AppView> : MvpBasePresenter<V>() {
 
     open fun onDestroy() {
         stopOrderInformationUpdater()
+        view = null
 
         if (disposables != null) {
             for (disposable in disposables!!) {

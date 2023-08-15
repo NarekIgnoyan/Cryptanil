@@ -9,11 +9,10 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.FragmentActivity
-import com.jakewharton.rxbinding2.widget.RxTextView
+import com.jakewharton.rxbinding4.widget.textChanges
 import com.primesoft.cryptanil.app
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import java.util.concurrent.TimeUnit
 
 fun View.visible() {
@@ -53,12 +52,15 @@ fun ViewGroup.hideSoftKeyboard() {
 }
 
 fun EditText.setDebounce(onNext: Consumer<String>, DELAY: Int = 300) {
-    RxTextView.textChanges(this)
+    this.textChanges()
         .filter { this.isFocused }
-        .flatMap { charSequence -> Observable.just(charSequence.toString()) }
+//        .flatMap { charSequence -> ObservableSourc.just(charSequence.toString()) }
+//        .flatMap(object:Function<String, Observable<List<Result>>{
+
+//        })
         .debounce(DELAY.toLong(), TimeUnit.MILLISECONDS)
         .observeOn(AndroidSchedulers.mainThread())
-        .doOnNext(onNext)
+//        .doOnNext(onNext)
         .subscribe()
 }
 

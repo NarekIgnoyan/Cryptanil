@@ -10,7 +10,7 @@ import com.primesoft.cryptanil.models.*
 import com.primesoft.cryptanil.utils.extensions.EMPTY_STRING
 import com.primesoft.cryptanil.views.TransactionView
 
-class TransactionPresenter : AppPresenter<TransactionView>() {
+class TransactionPresenter(view: TransactionView) : AppPresenter<TransactionView>(view) {
 
     var selectedCoin: String? = null
     var selectedNetwork: String? = null
@@ -46,10 +46,10 @@ class TransactionPresenter : AppPresenter<TransactionView>() {
                     view?.onProgressChanged(progressStatus)
 
                     if (progressStatus > ProgressStatus.WAITING.getId())
-                        view.disableSpinners()
+                        view?.disableSpinners()
 
                     if (orderInformation.orderTransactions?.isNotEmpty() == true)
-                        view.showTransactions(orderInformation.orderTransactions)
+                        view?.showTransactions(orderInformation.orderTransactions)
                 }
             }
         }
@@ -62,10 +62,10 @@ class TransactionPresenter : AppPresenter<TransactionView>() {
         } else
             stopOrderInformationUpdater()
 
-        view.setUpCoinUI(coinAddress.isBinance ?: true)
+        view?.setUpCoinUI(coinAddress.isBinance ?: true)
         view?.processCoinAddress(coinAddress)
         coinAddress.orderRequiredAmount?.let {
-            view.setUpRemainingAmount(it)
+            view?.setUpRemainingAmount(it)
         }
     }
 

@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.primesoft.cryptanil.R
 import com.primesoft.cryptanil.api.RequestType
 import com.primesoft.cryptanil.databinding.LoadingLayoutBinding
@@ -16,14 +17,20 @@ import com.primesoft.cryptanil.utils.DATA_KEY
 import com.primesoft.cryptanil.utils.extensions.*
 import com.primesoft.cryptanil.views.AppView
 
-abstract class AppActivity<V : AppView, P : AppPresenter<V>> : AppMvpActivity<V, P>(),
+abstract class AppActivity<V : AppView, P : AppPresenter<V>> : AppCompatActivity(),
     AppView {
 
+    var presenter: P? = null
     private var loadingLayout: View? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        presenter.onCreate()
+        onCreatePresenter()
+    }
+
+    private fun onCreatePresenter() {
+        presenter = createPresenter()
+        presenter?.onCreate()
     }
 
     override fun setContentView(view: View?) {
@@ -87,5 +94,12 @@ abstract class AppActivity<V : AppView, P : AppPresenter<V>> : AppMvpActivity<V,
     override fun attachBaseContext(newBase: Context?) {
         super.attachBaseContext(updateResources(newBase))
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter?.onDestroy()
+    }
+
+    abstract fun createPresenter(): P
 
 }

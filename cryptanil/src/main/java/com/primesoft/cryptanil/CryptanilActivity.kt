@@ -1,6 +1,7 @@
 package com.primesoft.cryptanil
 
 import android.os.Bundle
+import android.window.OnBackInvokedDispatcher
 import com.primesoft.cryptanil.base.AppActivity
 import com.primesoft.cryptanil.databinding.ActivityCryptanilBinding
 import com.primesoft.cryptanil.models.Coin
@@ -23,11 +24,11 @@ class CryptanilActivity : AppActivity<MainView, MainPresenter>(), MainView {
     }
 
     override fun openTransactionFragment(testing: Boolean, companyInformation: CompanyInformation) {
-        presenter.openTransactionFragment(supportFragmentManager, testing, companyInformation)
+        presenter?.openTransactionFragment(supportFragmentManager, testing, companyInformation)
     }
 
     override fun openSearchFragment(coins: ArrayList<Coin>?, selectListener: ActionOne<Coin>) {
-        presenter.openSearchFragment(supportFragmentManager, coins) {
+        presenter?.openSearchFragment(supportFragmentManager, coins) {
             selectListener.invoke(it)
             binding.root.hideSoftKeyboard()
             onBackPressedDispatcher.onBackPressed()
@@ -35,17 +36,17 @@ class CryptanilActivity : AppActivity<MainView, MainPresenter>(), MainView {
     }
 
     override fun openStatusFragment(orderInformation: OrderInformation) {
-        presenter.openStatusFragment(supportFragmentManager, orderInformation)
+        presenter?.openStatusFragment(supportFragmentManager, orderInformation)
     }
 
-    override fun createPresenter() = MainPresenter()
+    override fun createPresenter() = MainPresenter(this)
 
-    override fun onBackPressed() {
+    override fun getOnBackInvokedDispatcher(): OnBackInvokedDispatcher {
         if (!FragmentsController.haveBackStack(supportFragmentManager)) {
-            presenter.closeCryptanil()
+            presenter?.closeCryptanil()
+            return super.getOnBackInvokedDispatcher()
         } else {
-            super.onBackPressed()
+            return super.getOnBackInvokedDispatcher()
         }
     }
-
 }

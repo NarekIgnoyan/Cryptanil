@@ -2,7 +2,10 @@ package com.primesoft.cryptanil.base
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.primesoft.cryptanil.R
 import com.primesoft.cryptanil.api.RequestType
 import com.primesoft.cryptanil.models.Error
@@ -16,9 +19,10 @@ import com.primesoft.cryptanil.views.AppView
 import com.primesoft.cryptanil.views.MainView
 import com.primesoft.cryptanil.views.NavigationView
 
-abstract class AppFragment<V : AppView, P : AppPresenter<V>>(id: Int) : AppMvpFragment<V, P>(id),
+abstract class AppFragment<V : AppView, P : AppPresenter<V>>(id: Int) : Fragment(id),
     AppView {
 
+    var presenter: P? = null
     private var mainView: MainView? = null
     private var navigationView: NavigationView? = null
 
@@ -30,10 +34,15 @@ abstract class AppFragment<V : AppView, P : AppPresenter<V>>(id: Int) : AppMvpFr
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.onCreate()
+        onCreatePresenter()
     }
 
-    abstract override fun createPresenter(): P
+    private fun onCreatePresenter() {
+        presenter = createPresenter()
+        presenter?.onCreate()
+    }
+
+    abstract fun createPresenter(): P
 
     override fun showLoading() {
         mainView?.showLoading()
@@ -87,7 +96,7 @@ abstract class AppFragment<V : AppView, P : AppPresenter<V>>(id: Int) : AppMvpFr
 
     override fun onDestroy() {
         super.onDestroy()
-        presenter.onDestroy()
+        presenter?.onDestroy()
     }
 
 }

@@ -143,9 +143,9 @@ class StatusFragment : AppFragment<StatusView, StatusPresenter>(R.layout.status_
 
     private fun setClickListeners() {
         binding.with {
-            toolbar.onActionClicked { presenter.closeCryptanil() }
+            toolbar.onActionClicked { presenter?.closeCryptanil() }
             actionBT.setOnClickListener {
-                presenter.navigateFromAction(
+                presenter?.navigateFromAction(
                     orderInformation?.isPartlyExpired()
                 )
             }
@@ -172,8 +172,6 @@ class StatusFragment : AppFragment<StatusView, StatusPresenter>(R.layout.status_
         }
     }
 
-    override fun createPresenter() = StatusPresenter()
-
     override fun onOrderInformationUpdated(orderInformation: OrderInformation) {
         this.orderInformation = orderInformation
         setUpUI()
@@ -181,7 +179,7 @@ class StatusFragment : AppFragment<StatusView, StatusPresenter>(R.layout.status_
 
     override fun startRefund() {
         activity?.showRefundDialog {
-            presenter.requestRefund(it)
+            presenter?.requestRefund(it)
         }
     }
 
@@ -192,5 +190,8 @@ class StatusFragment : AppFragment<StatusView, StatusPresenter>(R.layout.status_
         }
         binding.transactionsHolder.addView(holder.view)
     }
+
+    override fun createPresenter() = StatusPresenter(this)
+
 
 }

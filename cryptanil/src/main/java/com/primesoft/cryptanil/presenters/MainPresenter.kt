@@ -16,7 +16,7 @@ import com.primesoft.cryptanil.utils.extensions.tryTo
 import com.primesoft.cryptanil.utils.fragments.FragmentsController
 import com.primesoft.cryptanil.views.MainView
 
-class MainPresenter : AppPresenter<MainView>() {
+class MainPresenter(view: MainView) : AppPresenter<MainView>(view) {
 
     override fun onCreate() {
         super.onCreate()

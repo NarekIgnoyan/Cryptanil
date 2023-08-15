@@ -55,8 +55,8 @@ class TransactionFragment :
 
     private fun setUpCompanyInformation() {
         companyInformation?.let {
-            presenter.selectedCoin = it.coinType
-            presenter.selectedNetwork = it.networkName
+            presenter?.selectedCoin = it.coinType
+            presenter?.selectedNetwork = it.networkName
             Glide.with(this).load(it.companyIconUrl).into(binding.companyIV)
             binding.companyNameTV.text = it.companyName
             binding.amountTV.text = "${it.requiredAmount} ${it.currencyCode}"
@@ -76,13 +76,13 @@ class TransactionFragment :
     private fun setClickListeners() {
         binding.with {
             submitBT.setOnClickListener {
-                presenter.submitOrder(txIdEt.getText())
+                presenter?.submitOrder(txIdEt.getText())
             }
             simulateBT.setOnClickListener {
                 submitBT.performClick()
             }
             toolbar.onActionClicked {
-                presenter.closeCryptanil()
+                presenter?.closeCryptanil()
             }
         }
     }
@@ -178,7 +178,7 @@ class TransactionFragment :
     }
 
     private fun getCoinAddress() {
-        presenter.getCoinAddress(
+        presenter?.getCoinAddress(
             (binding.cryptoTypeSpinner.getSelected() as Coin).coin,
             (binding.networkSpinner.getSelected() as Network).network
         )
@@ -205,6 +205,6 @@ class TransactionFragment :
         })
     }
 
-    override fun createPresenter() = TransactionPresenter()
+    override fun createPresenter() = TransactionPresenter(this)
 
 }
