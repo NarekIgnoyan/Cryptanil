@@ -15,7 +15,7 @@ Add the JitPack repository to your build file, in your root build.gradle at the 
 ```
 
 ### Step 2
-Add the dependency
+Add the dependency:
 
 ```gradle
  dependencies { 
@@ -26,7 +26,7 @@ Add the dependency
 
 ## Usage
 
-### Call createOrder method or use [API](https://documenter.getpostman.com/view/6681805/2s8YzXwgGb#261c5b7a-f5d7-4288-848e-69766e1491cb) to get transactionID
+### Call createOrder method or use [API](https://documenter.getpostman.com/view/6681805/2s8YzXwgGb#261c5b7a-f5d7-4288-848e-69766e1491cb) to get transactionID:
  
 ```kotlin
  CryptanilApp.createOrder(null, 
@@ -38,12 +38,12 @@ Add the dependency
         })
 ```
 
-### After getting transactionID
+### After getting transactionID:
 ```kotlin
  CryptanilApp.start(this,Language.EN, transactionID,optional_RequestCode)
 ```
 
-### Or use registerForActivityResult and pass Intent to it
+### Or use registerForActivityResult and pass Intent to it:
 ```kotlin
  yourReceiver.launch(
             CryptanilApp.createIntent(
@@ -54,7 +54,7 @@ Add the dependency
         )
 ```
 
-### To get data from result intent use
+### To get data from result intent use:
 ```kotlin
 CryptanilApp.getOrderInformation(resultIntent)
 ```
