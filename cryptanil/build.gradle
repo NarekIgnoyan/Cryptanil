@@ -13,6 +13,13 @@ android {
         targetSdk 33
     }
 
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -71,7 +78,7 @@ afterEvaluate {
 
                 groupId = 'com.github.narekignoyan'
                 artifactId = 'cryptanil'
-                version = '1.0.1'
+                version = '1.0.2'
             }
         }
     }
