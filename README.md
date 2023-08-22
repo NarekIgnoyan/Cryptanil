@@ -29,7 +29,7 @@ Add the dependency:
 ### Call createOrder method or use [API](https://documenter.getpostman.com/view/6681805/2s8YzXwgGb#261c5b7a-f5d7-4288-848e-69766e1491cb) to get transactionID:
  
 ```kotlin
- CryptanilApp.createOrder(null, 
+ CryptanilApp.createOrder(yourKey, 
         { transactionID ->
             launchCryptanil(transactionID)
         },
