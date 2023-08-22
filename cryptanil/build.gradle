@@ -78,7 +78,7 @@ afterEvaluate {
 
                 groupId = 'com.github.narekignoyan'
                 artifactId = 'cryptanil'
-                version = '1.0.3'
+                version = '1.0.4'
             }
         }
     }

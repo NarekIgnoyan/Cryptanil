@@ -21,7 +21,7 @@ Add the dependency:
 
 ```gradle
  dependencies { 
-    implementation 'com.github.narekignoyan:Cryptanil:1.0.3' 
+    implementation 'com.github.narekignoyan:Cryptanil:1.0.4' 
  }
 ```
 ##
