@@ -14,14 +14,15 @@ import com.primesoft.cryptanil.utils.DATA_KEY
 import com.primesoft.cryptanil.utils.extensions.getIntent
 import com.primesoft.cryptanil.utils.extensions.openActivity
 import com.primesoft.cryptanil.utils.extensions.serializable
+import java.util.*
 
 object CryptanilApp : java.io.Serializable {
 
     fun start(
         activity: Activity,
-        language: Language,
         token: String,
-        requestCode: Int = CRYPTANIL_REQUEST_CODE
+        requestCode: Int = CRYPTANIL_REQUEST_CODE,
+        language: Language = defaultLanguage()
     ) {
         app.language = language.getId()
         app.token = token
@@ -30,9 +31,9 @@ object CryptanilApp : java.io.Serializable {
 
     fun start(
         fragment: Fragment,
-        language: Language,
         token: String,
-        requestCode: Int = CRYPTANIL_REQUEST_CODE
+        requestCode: Int = CRYPTANIL_REQUEST_CODE,
+        language: Language = defaultLanguage()
     ) {
         app.language = language.getId()
         app.token = token
@@ -49,8 +50,8 @@ object CryptanilApp : java.io.Serializable {
 
     fun createIntent(
         context: FragmentActivity,
-        language: Language,
-        token: String
+        token: String,
+        language: Language = defaultLanguage()
     ): Intent {
         val cryptanilIntent = context.getIntent<CryptanilActivity>()
         app.language = language.getId()
@@ -65,5 +66,7 @@ object CryptanilApp : java.io.Serializable {
 
         return null
     }
+
+    private fun defaultLanguage() = Language.getById((Locale(app.resources.configuration.locale.language ?: (Language.EN.toString()))).toString())
 
 }

@@ -64,6 +64,7 @@
                         android:textSize="@dimen/big_text_size" />
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/amountTV"
                         style="@style/AppTextStyleBold"
                         android:layout_width="wrap_content"

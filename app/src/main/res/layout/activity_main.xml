@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:text="b3e8a344-b725-441e-a77b-9c28880237d9"
+        android:text="e3f337d8-3d82-4747-b201-063647c039a9"
         android:id="@+id/transactionInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

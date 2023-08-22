@@ -112,6 +112,7 @@ class TransactionFragment :
     override fun setUpRemainingAmount(orderRequiredAmount: OrderRequiredAmount) {
         binding.requiredTitleTV.visible()
         binding.requiredAmountTV.visible()
+        binding.amountTV.visible()
         binding.requiredAmountTV.text = orderRequiredAmount.getRemainingAmount()
         binding.requiredAmountTV.setOnClickListener {
             orderRequiredAmount.getCoinAmount().copy()

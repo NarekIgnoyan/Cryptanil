@@ -19,7 +19,7 @@ Add the dependency:
 
 ```gradle
  dependencies { 
-    implementation 'com.github.narekignoyan:Cryptanil:1.0.2' 
+    implementation 'com.github.narekignoyan:Cryptanil:1.0.3' 
  }
 ```
 ##
@@ -33,14 +33,14 @@ Add the dependency:
         { transactionID ->
             launchCryptanil(transactionID)
         },
-        {
+        { apiStatus->
            //Handle status if needed
         })
 ```
 
 ### After getting transactionID:
 ```kotlin
- CryptanilApp.start(this,Language.EN, transactionID,optional_RequestCode)
+ CryptanilApp.start(this, transactionID,optional_RequestCode,optional_Language.EN)
 ```
 
 ### Or use registerForActivityResult and pass Intent to it:
@@ -48,8 +48,8 @@ Add the dependency:
  yourReceiver.launch(
             CryptanilApp.createIntent(
                 this,
-                Language.EN,
-                transactionID
+                transactionID,
+                optional_Language.EN
             )
         )
 ```

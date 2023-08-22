@@ -14,12 +14,10 @@ class AppSpinnerAdapter(
 
     private var selectedPosition = 0
 
-    override fun onCreateViewHolder(
-        rowView: View,
-        parent: ViewGroup,
-        position: Int
-    ): SpinnerVH {
+
+    override fun onCreateViewHolder(rowView: View?, parent: ViewGroup?, position: Int): SpinnerVH {
         return SpinnerVH(rowView, parent)
+
     }
 
     override fun onBindView(viewHolder: SpinnerVH, position: Int) {

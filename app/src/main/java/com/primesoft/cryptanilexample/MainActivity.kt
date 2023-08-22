@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.primesoft.cryptanil.CryptanilApp
-import com.primesoft.cryptanil.enums.Language
 import com.primesoft.cryptanil.utils.extensions.toast
 import com.primesoft.cryptanil.utils.extensions.viewBinding
 import com.primesoft.cryptanilexample.databinding.ActivityMainBinding
@@ -36,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     private fun createCryptanilOrder() {
         CryptanilApp.createOrder(null, { transactionID ->
             launchCryptanil(transactionID)
-        }, {
+        }, { apiStatus->
 
         })
     }
@@ -45,7 +44,6 @@ class MainActivity : AppCompatActivity() {
         cryptanilReceiver.launch(
             CryptanilApp.createIntent(
                 this,
-                Language.EN,
                 transactionID
             )
         )
