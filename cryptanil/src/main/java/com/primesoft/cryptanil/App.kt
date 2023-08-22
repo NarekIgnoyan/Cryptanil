@@ -3,6 +3,7 @@ package com.primesoft.cryptanil
 import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
+import android.provider.Settings
 import java.util.*
 
 val app = App.instance
@@ -29,5 +30,10 @@ class App : Application() {
     }
 
     fun generateOrderID() = UUID.randomUUID().toString()
+
+    fun getCustomerID(): String = Settings.Secure.getString(
+        app.contentResolver,
+        Settings.Secure.ANDROID_ID
+    )
 
 }

@@ -41,11 +41,11 @@ object CryptanilApp : java.io.Serializable {
     }
 
     fun createOrder(
-        appKey: String?,
+        appKey: String,
         onOrderCreated: ActionOne<String>,
         statusListener: ActionOne<CryptanilApiStatus>
     ) {
-        CryptanilOrderAPI.instance.createOrder(onOrderCreated, statusListener)
+        CryptanilOrderAPI.instance.createOrder(appKey,onOrderCreated, statusListener)
     }
 
     fun createIntent(

@@ -27,13 +27,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun setClickListeners() {
         binding.transactionButton.setOnClickListener {
-            launchCryptanil(binding.transactionInput.text.toString())
-//            createCryptanilOrder()
+//            launchCryptanil(binding.transactionInput.text.toString())
+            createCryptanilOrder()
         }
     }
 
     private fun createCryptanilOrder() {
-        CryptanilApp.createOrder(null, { transactionID ->
+        //GET APP KEY IN https://dashboard.cryptanil.com/admin/settings
+        CryptanilApp.createOrder("", { transactionID ->
             launchCryptanil(transactionID)
         }, { apiStatus->
 

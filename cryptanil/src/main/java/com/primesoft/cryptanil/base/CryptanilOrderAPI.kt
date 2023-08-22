@@ -27,13 +27,14 @@ class CryptanilOrderAPI {
     }
 
     fun createOrder(
+        appKey:String,
         onOrderCreated: ActionOne<String>,
         statusListener: ActionOne<CryptanilApiStatus>?
     ) {
         if (!checkAppIsOnline(statusListener))
             return
 
-        ApiImplementation.instance.createOrder(CreateOrder())
+        ApiImplementation.instance.createOrder(CreateOrder(appKey))
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : Observer<Response<OrderInformation>?> {
