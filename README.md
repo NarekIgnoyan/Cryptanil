@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/narekignoyan/Cryptanil.svg)](https://jitpack.io/#narekignoyan/Cryptanil)
+
 #  Cryptanil
 
 Cryptanil is a Android library to accept crypto payments
