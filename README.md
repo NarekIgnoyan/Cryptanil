@@ -34,7 +34,7 @@ Add the dependency:
             launchCryptanil(transactionID)
         },
         { apiStatus->
-           //Handle status if needed
+            //Handle status if needed
         })
 ```
 
